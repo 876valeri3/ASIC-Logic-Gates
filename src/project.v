@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2026 Kayla Hewan
  * SPDX-License-Identifier: Apache-2.0
  */
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_876valeri3_logic_gates (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -17,7 +17,18 @@ module tt_um_example (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+    wire a = ui_in[0];
+    wire b = ui_in[1];
+
+    assign uo_out[0] = ~a;
+    assign uo_out[1] = a&b;
+    assign uo_out[2] = a|b;
+    assign uo_out[3] = ~(a&b);
+    assign uo_out[4] = ~(a|b);
+    assign uo_out[5] = a^b;
+    assign uo_out[6] = ~(a^b);
+    assign uo_out[7] = 0;
+    
   assign uio_out = 0;
   assign uio_oe  = 0;
 
