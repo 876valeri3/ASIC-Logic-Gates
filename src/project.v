@@ -16,23 +16,21 @@ module tt_um_876valeri3_logic_gates (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
     wire a = ui_in[0];
     wire b = ui_in[1];
 
-    assign uo_out[0] = ~a;
-    assign uo_out[1] = a&b;
-    assign uo_out[2] = a|b;
-    assign uo_out[3] = ~(a&b);
-    assign uo_out[4] = ~(a|b);
-    assign uo_out[5] = a^b;
-    assign uo_out[6] = ~(a^b);
+    assign uo_out[0] = ~a; //NOT Gate
+    assign uo_out[1] = a&b; //AND Gate
+    assign uo_out[2] = a|b; //OR Gate
+    assign uo_out[3] = ~(a&b); //NAND Gate
+    assign uo_out[4] = ~(a|b); //NOR Gate
+    assign uo_out[5] = a^b; //XOR Gate
+    assign uo_out[6] = ~(a^b); //XNOR Gate
     assign uo_out[7] = 0;
     
   assign uio_out = 0;
   assign uio_oe  = 0;
 
-  // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+    wire _unused = &{ena, clk, rst_n, 1'b0, ui_in[7:2], uio_in};
 
 endmodule
