@@ -2,7 +2,7 @@
 
 # ASIC Logic Gates
 
-A digital IC with the seven logic gates. A continuation of my previous project building logic gates using CMOS technology. 
+A digital IC with seven logic gates. A continuation of my previous project building logic gates using CMOS technology. 
 
 ## Pinout
 
