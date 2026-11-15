@@ -1,42 +1,35 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# ASIC Logic Gates
 
-- [Read the documentation for project](docs/info.md)
+A digital IC with the seven logic gates. A continuation of my previous project building logic gates using CMOS technology. 
 
-## What is Tiny Tapeout?
+## Pinout
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+| Pin | Function |
+|-----|----------|
+| ui[0] | A |
+| ui[1]   | B |
+| uo[0]   | NOT |
+| uo[1]   | AND |
+| uo[2]   | OR |
+| uo[3]   | NAND |
+| uo[4]   | NOR |
+| uo[5]   | XOR|
+| uo[6]   | XNOR |
+| uo[7]   | unused |
 
-To learn more and get started, visit https://tinytapeout.com.
+## Truth table
+| A | B | NOT A | AND |  OR | NAND | NOR | XOR | XNOR|
+|---|---|-------|-----|-----|------|-----|-----|-----|
+| 0 | 0 |   1   |  0  |  0  |  1   |  1  |  0  |  1  |
+| 0 | 1 |   1   |  0  |  1  |  1   |  0  |  1  |  0  |
+| 1 | 0 |   0   |  0  |  1  |  1   |  0  |  1  |  0  |
+| 1 | 1 |   0   |  1  |  1  |  0   |  0  |  0  |  1  |
 
-## Set up your Verilog project
+Links:
+- ASIC Logic Gates: https://www.instructables.com/ASIC-Logic-Gates/
+- Discrete CMOS Logic Gate Arrays: https://www.instructables.com/Building-Logic-Gate-PCBs-Using-CMOS-Technology
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
 
-The GitHub action will automatically build the ASIC files using [LibreLane](https://www.zerotoasiccourse.com/terminology/librelane/).
 
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
